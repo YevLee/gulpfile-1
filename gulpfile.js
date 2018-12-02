@@ -22,7 +22,7 @@ var gulp = require('gulp'); //gulp
 var browserSync = require('browser-sync').create(); //浏览器刷新
 var reload= browserSync.reload;
 var htmlmin = require('gulp-htmlmin');	//html压缩
-var scss = require('gulp-scss');	//scss编译
+var sass = require('gulp-sass');	//scss编译
 var cssmin = require('gulp-cssmin');	//css压缩
 var uglify = require('gulp-uglify'); //js压缩
 var imagemin = require('gulp-imagemin'); //img压缩
@@ -51,7 +51,7 @@ var config = {
 /*==编译scss到src/css==*/
 gulp.task('scssc',function(){
 	return gulp.src(config.scss)	//查找
-		.pipe(scss())	//编译
+		.pipe(sass())	//编译
 		.pipe(gulp.dest(config.scssc))	//输出
 		.pipe(reload({stream:true}))	//重新加载
 });
